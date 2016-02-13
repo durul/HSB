@@ -17,9 +17,9 @@ consumable using Carthage, CocoaPods, or git submodules.
   - In the Xcode Project Navigator, click your project, and then click Build Phases.
   - Click Link Binary With Libraries.
   - Add Dependency Libraries. Under Link Binary With Libraries, click +, and add the following frameworks:
-        QuartzCore.framework
-        Security.framework
-        SystemConfiguration.framework
+        - QuartzCore.framework
+        - Security.framework
+        - SystemConfiguration.framework
 
 ## License
 
@@ -36,7 +36,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Contribution
 - If you'd like to contribute please submit a pull request via GitHub.
-
-Like HSB? Get us a coffee ;-)
+- Like HSB? Get us a coffee ;-)
 
 [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://paypal.me/duruld/25)
