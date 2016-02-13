@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2ED310CC1C6FBC4100DEA394"
+               BuildableName = "HSBTests.xctest"
+               BlueprintName = "HSBTests"
+               ReferencedContainer = "container:HSB.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2ED310AC1C6FB83B00DEA394"
+            BuildableName = "HSB.framework"
+            BlueprintName = "HSB"
+            ReferencedContainer = "container:HSB.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
