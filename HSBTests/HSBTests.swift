@@ -12,7 +12,7 @@ import HSB
 
 class RGBTests: QuickSpec {
     override func spec() {
-        describe("HSBUIColor") {
+        describe("HSBColor") {
             it("is a correct representation of the values") {
                 let hsbPing = UIColor(
                     hue: CGFloat(1),
