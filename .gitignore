@@ -10,9 +10,6 @@
 *.pbxuser
 xcuserdata
 *.xccheckout
-*.xcuserstate
-*.xcscmblueprint
-
 
 # Build products
 build/
@@ -31,8 +28,13 @@ build/
 Pods
 
 # Carthage
-Carthage/Build
+Carthage/
 
 # AppCode specific files
 .idea/
 *.iml
+
+# Swift Package Manager
+.build/
+
+*.xcscmblueprint

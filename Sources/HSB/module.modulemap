@@ -1,0 +1,6 @@
+framework module HSB [system] {
+  umbrella header "HSB.h"
+
+  export *
+  module * { export * }
+}

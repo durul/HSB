@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0720"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2ED310AC1C6FB83B00DEA394"
+               BlueprintIdentifier = "4ABAD00B1E450C6700661CD9"
                BuildableName = "HSB.framework"
                BlueprintName = "HSB"
                ReferencedContainer = "container:HSB.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2ED310CC1C6FBC4100DEA394"
+               BlueprintIdentifier = "4ABAD0141E450C6700661CD9"
                BuildableName = "HSBTests.xctest"
                BlueprintName = "HSBTests"
                ReferencedContainer = "container:HSB.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2ED310AC1C6FB83B00DEA394"
+            BlueprintIdentifier = "4ABAD00B1E450C6700661CD9"
             BuildableName = "HSB.framework"
             BlueprintName = "HSB"
             ReferencedContainer = "container:HSB.xcodeproj">
@@ -64,7 +64,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2ED310AC1C6FB83B00DEA394"
+            BlueprintIdentifier = "4ABAD00B1E450C6700661CD9"
             BuildableName = "HSB.framework"
             BlueprintName = "HSB"
             ReferencedContainer = "container:HSB.xcodeproj">
@@ -82,7 +82,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2ED310AC1C6FB83B00DEA394"
+            BlueprintIdentifier = "4ABAD00B1E450C6700661CD9"
             BuildableName = "HSB.framework"
             BlueprintName = "HSB"
             ReferencedContainer = "container:HSB.xcodeproj">

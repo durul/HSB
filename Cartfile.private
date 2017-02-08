@@ -1,2 +1,3 @@
-github "Quick/Quick"
-github "Quick/Nimble"
+github "Quick/Quick" ~> 1.0
+github "Quick/Nimble" ~> 5.0
+github "thoughtbot/Curry"

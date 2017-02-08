@@ -2,7 +2,9 @@ import PackageDescription
 
 let package = Package(
     name: "Nimble",
-    targets: [
-        Target(name: "NimbleTests", dependencies: [.Target(name: "Nimble")])
+    exclude: [
+      "Sources/Lib",
+      "Sources/NimbleObjectiveC",
+      "Tests/NimbleTests/objc",
     ]
 )

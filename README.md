@@ -2,7 +2,7 @@ HSB
 ------------------------
 
 I am build a framework that exposes a function called HSBColor(hue:saturation:brightness) that returns a new HSBColor
-created from those values. I build it using Swift 2.2, with Carthage as our dependency manager. My framework will be
+created from those values. I build it using Swift 3.0+, with Carthage as our dependency manager. My framework will be
 consumable using Carthage, CocoaPods, or git submodules.
 
 ## Installation & Usage
@@ -21,20 +21,28 @@ consumable using Carthage, CocoaPods, or git submodules.
         - Security.framework
         - SystemConfiguration.framework
 
+## Requirements
+Xcode 8.2.1
+
+Swift 3.0 +
+
+Deployment Target = iOS 9.1
+
+Base SDK = iOS 10.1
+
 ## Asset Credits
--------------------------------------------------
+Portfolio: http://durul.github.io
 
-Linkedin: http://www.linkedin.com/pub/durul-dalkanat/58/48a/b2a
 
+## Support
 Twitter: https://www.twitter.com/duruldalkanat
 
-Blog: http://dumobility.tumblr.com/
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Durul Dalkanat
+Copyright (c) 2017 Durul Dalkanat
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

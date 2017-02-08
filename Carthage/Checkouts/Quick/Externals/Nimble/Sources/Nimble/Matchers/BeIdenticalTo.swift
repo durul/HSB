@@ -3,26 +3,45 @@ import Foundation
 
 /// A Nimble matcher that succeeds when the actual value is the same instance
 /// as the expected instance.
-public func beIdenticalTo<T: AnyObject>(expected: T?) -> NonNilMatcherFunc<T> {
+public func beIdenticalTo(_ expected: Any?) -> NonNilMatcherFunc<Any> {
     return NonNilMatcherFunc { actualExpression, failureMessage in
-        let actual = try actualExpression.evaluate()
+        #if os(Linux)
+            let actual = try actualExpression.evaluate() as? AnyObject
+        #else
+            let actual = try actualExpression.evaluate() as AnyObject?
+        #endif
         failureMessage.actualValue = "\(identityAsString(actual))"
         failureMessage.postfixMessage = "be identical to \(identityAsString(expected))"
-        return actual === expected && actual !== nil
+        #if os(Linux)
+            return actual === (expected as? AnyObject) && actual !== nil
+        #else
+            return actual === (expected as AnyObject?) && actual !== nil
+        #endif
     }
 }
 
-public func ===<T: AnyObject>(lhs: Expectation<T>, rhs: T?) {
+public func ===(lhs: Expectation<Any>, rhs: Any?) {
     lhs.to(beIdenticalTo(rhs))
 }
-public func !==<T: AnyObject>(lhs: Expectation<T>, rhs: T?) {
+public func !==(lhs: Expectation<Any>, rhs: Any?) {
     lhs.toNot(beIdenticalTo(rhs))
 }
 
+/// A Nimble matcher that succeeds when the actual value is the same instance
+/// as the expected instance.
+///
+/// Alias for "beIdenticalTo".
+public func be(_ expected: Any?) -> NonNilMatcherFunc<Any> {
+    return beIdenticalTo(expected)
+}
+
+#if _runtime(_ObjC)
 extension NMBObjCMatcher {
-    public class func beIdenticalToMatcher(expected: NSObject?) -> NMBObjCMatcher {
+    public class func beIdenticalToMatcher(_ expected: NSObject?) -> NMBObjCMatcher {
         return NMBObjCMatcher(canMatchNil: false) { actualExpression, failureMessage in
-            return try! beIdenticalTo(expected).matches(actualExpression, failureMessage: failureMessage)
+            let aExpr = actualExpression.cast { $0 as Any? }
+            return try! beIdenticalTo(expected).matches(aExpr, failureMessage: failureMessage)
         }
     }
 }
+#endif

@@ -3,14 +3,14 @@ import Foundation
 
 /// A Nimble matcher that succeeds when a value is "empty". For collections, this
 /// means the are no items in that collection. For strings, it is an empty string.
-public func beEmpty<S: SequenceType>() -> NonNilMatcherFunc<S> {
+public func beEmpty<S: Sequence>() -> NonNilMatcherFunc<S> {
     return NonNilMatcherFunc { actualExpression, failureMessage in
         failureMessage.postfixMessage = "be empty"
         let actualSeq = try actualExpression.evaluate()
         if actualSeq == nil {
             return true
         }
-        var generator = actualSeq!.generate()
+        var generator = actualSeq!.makeIterator()
         return generator.next() == nil
     }
 }
@@ -21,7 +21,7 @@ public func beEmpty() -> NonNilMatcherFunc<String> {
     return NonNilMatcherFunc { actualExpression, failureMessage in
         failureMessage.postfixMessage = "be empty"
         let actualString = try actualExpression.evaluate()
-        return actualString == nil || (actualString! as NSString).length  == 0
+        return actualString == nil || NSString(string: actualString!).length  == 0
     }
 }
 
@@ -36,7 +36,7 @@ public func beEmpty() -> NonNilMatcherFunc<NSString> {
 }
 
 // Without specific overrides, beEmpty() is ambiguous for NSDictionary, NSArray,
-// etc, since they conform to SequenceType as well as NMBCollection.
+// etc, since they conform to Sequence as well as NMBCollection.
 
 /// A Nimble matcher that succeeds when a value is "empty". For collections, this
 /// means the are no items in that collection. For strings, it is an empty string.
@@ -68,6 +68,7 @@ public func beEmpty() -> NonNilMatcherFunc<NMBCollection> {
     }
 }
 
+#if _runtime(_ObjC)
 extension NMBObjCMatcher {
     public class func beEmptyMatcher() -> NMBObjCMatcher {
         return NMBObjCMatcher(canMatchNil: false) { actualExpression, failureMessage in
@@ -81,10 +82,11 @@ extension NMBObjCMatcher {
                 let expr = Expression(expression: ({ value as String }), location: location)
                 return try! beEmpty().matches(expr, failureMessage: failureMessage)
             } else if let actualValue = actualValue {
-                failureMessage.postfixMessage = "be empty (only works for NSArrays, NSSets, NSDictionaries, NSHashTables, and NSStrings)"
-                failureMessage.actualValue = "\(NSStringFromClass(actualValue.dynamicType)) type"
+                failureMessage.postfixMessage = "be empty (only works for NSArrays, NSSets, NSIndexSets, NSDictionaries, NSHashTables, and NSStrings)"
+                failureMessage.actualValue = "\(String(describing: type(of: actualValue))) type"
             }
             return false
         }
     }
 }
+#endif

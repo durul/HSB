@@ -8,11 +8,11 @@
 
 import Curry
 
-public func HSBColor(hue: Int, saturation: Double, brightness: Double) -> UIColor {
+public func HSBColor(_ hue: Int, saturation: Double, brightness: Double) -> UIColor {
     return curry(createColor)(hue)(saturation)(brightness)
 }
 
-private func createColor(hue: Int, saturation: Double, brightness: Double) -> UIColor {
+private func createColor(_ hue: Int, saturation: Double, brightness: Double) -> UIColor {
     return UIColor(
         hue: CGFloat(1),
         saturation: CGFloat(1),

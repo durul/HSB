@@ -1,20 +1,16 @@
-Pod::Spec.new do |spec|
-  spec.name = "HSB"
-  spec.version = "1.0.0"
-  spec.summary = "Sample framework from blog post, not for real world use.Functional JSON parsing library for Swift."
-  spec.homepage = "https://github.com/durul/HSB"
-  spec.license = { :type => 'MIT', :file => 'LICENSE' }
-  spec.authors = {
-    "Jake Craige" => 'adurul17@hotmail.com',
-    "thoughtbot" => nil,
+Pod::Spec.new do |s|
+  s.name = "HSB"
+  s.version = %x(git describe --tags --abbrev=0).chomp
+  s.summary = "HSB"
+  s.homepage = "https://github.com/thoughtbot/HSB"
+  s.license = { type: "MIT", file: "LICENSE" }
+  s.author = {
+    "Durul Dalkanat" => "adurul17@hotmail.com",
   }
   spec.social_media_url = "http://twitter.com/duruldalkanat"
-
-  spec.source = { :git => "https://github.com/durul/HSB.git", :tag => "v#{spec.version}", :submodules => true }
-  spec.source_files  ="HSB/**/*.{h,swift}"
-  spec.requires_arc = true
-  spec.platform     = :ios
-  spec.ios.deployment_target = "9.1"
-
-  spec.dependency "Curry", '~> 1.4.0'
+  s.platform = :ios, "8.0"
+  s.source = { git: "https://github.com/durul/HSB.git#{s.name}.git", tag: "#{s.version}" }
+  s.source_files = "Sources/#{s.name}/**/*.{swift,h}"
+  s.module_map = "Sources/#{s.name}/module.modulemap"
+  s.public_header_files = "Sources/#{s.name}/#{s.name}.h"
 end
