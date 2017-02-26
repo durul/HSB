@@ -27,10 +27,10 @@ Use the app and enjoy. :)
 * Calculations from RGB to HSB taken from: http://codeitdown.com/hsl-hsb-hsv-color/
 
 ## Requirements
-Xcode 8.2.1
-Swift 3.0 +
-Deployment Target = iOS 9.1
-Base SDK = iOS 10.1
+* Xcode 8.2.1
+* Swift 3.0 +
+* Deployment Target = iOS 9.1
+* Base SDK = iOS 10.1
 
 ## Asset Credits
 Portfolio: http://durul.github.io
